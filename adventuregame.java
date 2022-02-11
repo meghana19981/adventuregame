@@ -3,8 +3,6 @@ import java.util.Random;
  
 public class adventuregame{
  
-   Scanner myScanner = new Scanner(System.in);
-   Scanner enterScanner = new Scanner(System.in);
    Scanner input = new Scanner(System.in);
    Random rand= new Random();
 
@@ -99,96 +97,98 @@ public class adventuregame{
       int pull = 0;
       while(pull !=1){
          System.out.println("Press '1' to pull out an item!");
+         pull = input.nextInt();
+         
+         int randomnumber = rand.nextInt(3);
+         randomnumber += 1;
+         
+         System.out.println("The item is a key! You pull it out and there is a number on it. It says 'Door #" + randomnumber + "' You head to the door with " + randomnumber + " on it.");
+         
+         if(randomnumber == 1){
+            //doorone();
+         }
+         
+         else if (randomnumber == 2){
+           //doortwo();
+         
+         }
+         
+         else if (randomnumber == 3){
+           doorthree();
+         
+         }
          
          
          
       }
+   
+   
    }
+   
    public void doorthree(){
+   
       System.out.println("You entered into a door 3 with your key \n The room is dark, you cant see where you are.");
       System.out.println("You feel around the wall next to you and find a light switch.");
       
-   
-      System.out.println("Press '0' to turn the light on!: ");
-
-      int light = input.nextInt();
-           
-      if(light == 0){
-      
-      
-            System.out.println("The light turned on! You realize that you're in a garage.\n There are no cars inside, but there has to be a way to open it. \n Press '1' to continue looking!");
-            int continuing = input.nextInt();
-      
-               
-            if(continuing == 1){
+      int light = 0;
+      while(light != 1){
+         System.out.println("Press '1' to turn the light on!");
+         light = input.nextInt();
          
-               while(pick != 2){
-   
-                  System.out.println("You continue to look around the garage. There are several items that you can look through!");
-                  System.out.println("press '1' to look in shelf"); 
-                  System.out.println("press '2' to look in box"); 
-                  System.out.println("press '3' to look in trashcan");
-                  System.out.println("press '4' to look in bag");
+         if(light == 1){
+                              
+            while(pick != 2){
                
-                  System.out.println("What do you pick?: ");
-                  pick = input.nextInt();
+              System.out.println("You continue to look around the garage. There are several items that you can look through!");
+              System.out.println("press '1' to look in shelf"); 
+              System.out.println("press '2' to look in box"); 
+              System.out.println("press '3' to look in trashcan");
+              System.out.println("press '4' to look in bag");
+                     
+              System.out.println("What do you pick?: ");
+              pick = input.nextInt();
                            
-                     if (pick == 1){            
+              if (pick == 1){            
                         
-                        System.out.println("You picked the shelf. You rumage through shelf and didnt find anything...");
-                      }
+                 System.out.println("You picked the shelf. You rumage through shelf and didnt find anything...");
+              }
                      
-                     else if (pick == 2){
+              else if (pick == 2){
                         
-                        System.out.println("You picked the box.\n There are many items in the box.\n You look inside and find an object...\n It's a garage door opener!\n You press the button and it opens!");
-                        ending();   
-                     }
+                 System.out.println("You picked the box.\n There are many items in the box.\n You look inside and find an object...\n It's a garage door opener!\n You press the button and it opens!");
+                 ending();
+              }
                      
-                     else if (pick == 3){
+               else if (pick == 3){
                      
-                          System.out.println("You picked the trashcan...\n Something smells gross.\n You reach inside and a mouse jumps out!\n Theres nothing in here...");
-                     }
+                  System.out.println("You picked the trashcan...\n Something smells gross.\n You reach inside and a mouse jumps out!\n Theres nothing in here...");
+               }
                      
-                     else if (pick == 4){
+               else if (pick == 4){
                      
-                          System.out.println("You picked the bag. You reach inside.\n There are random items inside. Looks like it was used for school.\n There are pencils and notebooks. Other then that...\n Theres nothing in here....");
-                     }
+                   System.out.println("You picked the bag. You reach inside.\n There are random items inside. Looks like it was used for school.\n There are pencils and notebooks. Other then that...\n Theres nothing in here....");
+               }
                      
-                     else{
-                        System.out.println("Not a valid response...");
-                     }
-                     
+               else{
+                  System.out.println("Please enter a proper choice...");
+               }
+               }
                
-                     
-                     
-               
-               
-             
-               
-               
-                     
-      
+           }
+           else{
+              
+              System.out.println("Please enter a proper choice...");
+           }
+            
             }
          
- 
-      }     
-           
-      }
-   
-      else{
-            
-         System.out.println("Not a valid choice...");
-         doorthree();          
-       }
-   
-   
-   }
-   
+         }
+         
    public void ending(){
    
       System.out.println("You found a way out of the house! It's already morning now.\n As you leave the house you get your service back.\n You dial for help and they are on their way\n You can finally go home!");
+
    
    }
-   
- }
- 
+
+}  
