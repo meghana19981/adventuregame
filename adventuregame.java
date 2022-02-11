@@ -26,13 +26,14 @@ public class adventuregame{
    
    public void intro(){
         //This is the intro to the game, the first part is story telling. Giving the setting of the game. 
-        System.out.println("You are driving down an abondoned road late at night. You just got out of a late meeting and the gps has guided you down a new road.");
-        System.out.println("Trusting the GPS you begind to take turns and enter into roads you have never seen before. The roads are empty except for you, only a few streetlights illuminating the road.");
-        System.out.println("As you listen to the GPS you turn down a road and drive, you see a large house glowing under the moonlight. It looks intimidating and you try not to look at it for too long.");
-        System.out.println("Suddently you hear a weird noise coming from your car and get worried. You have never heard it before until today. You try to ignore the noise until your car starts jerking in an unusual manner.");
-        System.out.println("Suddently, the car begins to slow down and finally completely halts in the middle of the road. You try to turn it on multiple times but it doesnt work.");
-        System.out.println("You reach for your phone and try to call AAA hoping they will be able to help you. With worry you dial the number and wait.");
-        System.out.println("The automated vocie begins to speak asking for what you need.");
+        System.out.println(">>You are driving down an abondoned road late at night. You just got out of a late meeting and the gps has guided you down a new road.");
+        System.out.println(">>Trusting the GPS you begind to take turns and enter into roads you have never seen before. The roads are empty except for you,");
+        System.out.println("only a few streetlights illuminating the road. As you listen to the GPS you turn down a road and drive, you see a large house");
+        System.out.println("glowing under the moonlight. It looks intimidating and you try not to look at it for too long.Suddently you hear a weird noise");
+        System.out.println("coming from your car and get worried. You have never heard it before until today. You try to ignore the noise until your car starts");
+        System.out.println("jerking in an unusual manner. Suddently, the car begins to slow down and finally completely halts in the middle of the road. You try");
+        System.out.println("to turn it on multiple times but it doesnt work. You reach for your phone and try to call AAA hoping they will be able to help you.");
+        System.out.println(">>With worry you dial the number and wait. The automated vocie begins to speak asking for what you need.");
         
         //user must enter 1 or 2 to continue
         while(help < 1 || help > 3){
@@ -41,7 +42,7 @@ public class adventuregame{
             
             if(help == 1 || help == 2){
             
-            System.out.println("You press for help.\n The voice tells you that it will take more than 10 hours to get help.\n Before you can refute the call ends. You look at your phone and notice your service is completely gone.");
+            System.out.println("You press for help.\n The voice tells you that it will take more than 10 hours to get help.\n Before you can refute the call ends. You look at your phone and notice\n your service is completely gone.");
             System.out.println("Without a working phone or a working car you begin to get scared.\n You remember the house you just passed by.\n Without any other choice you get out of your car and head towards the house.");
             house();
             
