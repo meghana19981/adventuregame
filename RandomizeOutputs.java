@@ -103,7 +103,7 @@ public class RandomizeOutputs {
         if (item == 2  ) {
            return true;
         }
-        else if(item == 4){
+        else if(item == 3){
             return true;
         }
         else {
