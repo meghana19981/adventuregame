@@ -34,11 +34,12 @@ public class adventuregame{
         System.out.println("You reach for your phone and try to call AAA hoping they will be able to help you. With worry you dial the number and wait.");
         System.out.println("The automated vocie begins to speak asking for what you need.");
         
+        //user must enter 1 or 2 to continue
         while(help < 1 || help > 3){
             System.out.println("Automated Voice: press '1' for help.");
             help = input.nextInt(); 
-         
-            if(help == 1){
+            
+            if(help == 1 || help == 2){
             
             System.out.println("You press for help.\n The voice tells you that it will take more than 10 hours to get help.\n Before you can refute the call ends. You look at your phone and notice your service is completely gone.");
             System.out.println("Without a working phone or a working car you begin to get scared.\n You remember the house you just passed by.\n Without any other choice you get out of your car and head towards the house.");
@@ -124,6 +125,15 @@ public class adventuregame{
    
    
    }
+   
+   public void doorone(){
+   
+   }
+   
+   public void doortwo(){
+   
+   }
+   
    
    public void doorthree(){
    
