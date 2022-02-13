@@ -6,11 +6,11 @@ public class Escape {
    
     public String name;
     Scanner input = new Scanner(System.in);
-   
+   //default construct
     public Escape() {
 
     }
-    
+    // overload construct
     public Escape( String playerName) {
         
         this.name = playerName;
@@ -173,12 +173,14 @@ public class Escape {
     }
 
     public boolean hallway() {
+       // hallway dialogue
         System.out.println(" Now you are in the hallway, there are three doors\n");
+       //asks the player to enter a number from 1-3
         System.out.println("please enter a number from 1-3, to choose a door ");
         Scanner input = new Scanner(System.in);
         Random rand = new Random();
 
-        int door1 = rand.nextInt(3) + 1;// assigns door1 to random number from 1-3
+        int door1 = rand.nextInt(3) + 1;// assigns door1 to a random number from 1-3
 
         int door2 = 0;
         int door3 =0;
