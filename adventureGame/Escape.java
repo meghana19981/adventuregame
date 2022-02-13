@@ -3,7 +3,7 @@ import java.util.*;
 
 //This is the "main" class, sets up the game for the users and declares several variables used throughout the game.
 public class Escape {
-    public int doorChoice;
+   
     public String name;
     Scanner input = new Scanner(System.in);
    
@@ -11,8 +11,8 @@ public class Escape {
 
     }
     
-    public Escape(int choice, String playerName) {
-        this.doorChoice = choice;
+    public Escape( String playerName) {
+        
         this.name = playerName;
 
     }
@@ -160,7 +160,7 @@ public class Escape {
                             int next5 = input.nextInt();
 
                             if (next5 == 0){
-                                //hallway();
+                                
                             }
                         }
                     }
@@ -173,43 +173,40 @@ public class Escape {
     }
 
     public boolean hallway() {
-        //hallway dialogue.
         System.out.println(" Now you are in the hallway, there are three doors\n");
-       
-        //user must pick a door they want to go through.
-        System.out.println("please enter a number from 1-3, to choose a door\n");
+        System.out.println("please enter a number from 1-3, to choose a door ");
         Scanner input = new Scanner(System.in);
         Random rand = new Random();
-        
-        //the door number is given randomly.
-        int door1 = rand.nextInt(3) + 1;
+
+        int door1 = rand.nextInt(3) + 1;// assigns door1 to random number from 1-3
 
         int door2 = 0;
         int door3 =0;
-
+        // the while loops make sure all three doors are not assigned to the same number
         while (door2 == door1 || door2 == 0) {
-            door2 = rand.nextInt(3) + 1;
+            door2 = rand.nextInt(3) + 1;// assigns door2 to random number from 1-3
         }
 
         while (door3 == door1 || door3 == door2 || door3 == 0) {
-            door3 = rand.nextInt(3) + 1;
+            door3 = rand.nextInt(3) + 1;// assigns door3 to random number from 1-3
         }
-        boolean v = false;
+        boolean choiceResult = false; // initializes the result of going through a door
         int choice = input.nextInt();
         if (choice == door1) {
-            //System.out.println(theDoor1());// this is just to show the output
-            v = theDoor1();
+
+            choiceResult = theDoor1();// the player went through door 1
         }
         if (choice == door2) {
-            //System.out.println(theDoor2());//this is just to show the output
-            v = theDoor2();
+
+            choiceResult = theDoor2();// the player went through door 1
         }
         if (choice == door3) {
-            //System.out.println(theDoor3());//this is just to show the output
-            v = theDoor3();
+
+            choiceResult = theDoor3();// the player went through door 1
         }
-        return v;
+        return choiceResult;
     }
+
 
 
     // Jordan's Door
@@ -261,29 +258,31 @@ public class Escape {
 
 
 
-     // Meseret's door
+    // Meseret's door
     public boolean theDoor2() {
+        // generates four random numbers from 5-9
         int number1 = (int) (Math.random() * 5) + 5;
         int number2 = (int) (Math.random() * 5) + 5;
         int number3 = (int) (Math.random() * 5) + 5;
         int number4 = (int) (Math.random() * 5) + 5;
-        int total = number1 + number2;
-        int product = number3 * number4;
-        System.out.println(" Now you have the key to door2. This  door leads you to a basement\n" +
-        System.out.println("where there is a locked door with a password. in order to get out of the house you need\n");
-        System.out.println("to enter the correct password: \n");
-        System.out.println("password hint: " + number1 + "+" + number2
-                + " space " + number3 + "*" + number4);
+        int total = number1 + number2;// adds random num1 and num 2
+        int product = number3 * number4;// multiplies num3 and num 4
+        System.out.println(" Now you have the key to door2. This  door leads you to a basement" +
+                "where there is a locked door with a password. \n\n Inorder to get out of the house you need" +
+                " to enter the correct password ");// informs the player of the situation  behind door 2
+        System.out.println("\npassword hint: " + number1 + "+" + number2
+                + " space " + number3 + "*" + number4);// allows the player to answer the math question asked
         Scanner input = new Scanner(System.in);
+        // takes their input
         int Ans1 = input.nextInt();
         int Ans2 = input.nextInt();
+        // compares the users answer and the correct answer
         if (Ans1 == total && Ans2 == product) {
-            return true;
+            return true;// returns true if they are correct
         }
         else {
-            System.out.println("wrong password\n");
-            System.out.println("\n now you are back to the hallway\n");
-            return false;
+            System.out.println("WRONG PASSWORD!");
+            return false;// returns false if they are wrong
         }
     }
 
