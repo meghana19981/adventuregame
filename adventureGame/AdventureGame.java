@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class AdventureGame {
     public static void main(String[] args){
         Escape Answer = new Escape();
-        System.out.println("Welcome this is \"Escape the abondend house game\" \n what is your name?");
+        System.out.println("Welcome this is \"Escape the abandoned house \" game \nwhat is your name?");
         Scanner input = new Scanner(System.in);
         Answer.name= input.next();
         System.out.println("Hello "+Answer.name);
@@ -16,15 +16,15 @@ public class AdventureGame {
         // takes the player back to the hallway if they didn't get the right answer to the questions behind the doors they accessed 
         // and takes them back to the hallway 
         if (x==false) {
-                x=Answer.hallway();
+            while(x==false) {
+                x = Answer.hallway();
+            }
             }
 
 
-         // if the player could answer the questions right, this tells them they won and the game ends
-        System.out.println("CONGRATULATIONS "+Answer.name+"!! You have made it outside of the house.");
 
-
-
+            // if the player could answer the questions right, this tells them they won and the game ends
+            System.out.println("CONGRATULATIONS " + Answer.name + "!! You have made it outside of the house.");
     }
 
 }
