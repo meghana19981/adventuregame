@@ -18,19 +18,20 @@ public class Escape {
 
     public void storyLine() {
             //This is the intro to the game, the first part is story telling. Giving the setting of the game.
-            System.out.println(">>You are driving down an abondoned road late at night. You just got out of a late meeting and the gps has guided you down a new road.\n");
-            System.out.println(">>Trusting the GPS you begind to take turns and enter into roads you have never seen before. The roads are empty except for you,\n");
-
-            System.out.println("(Press '0' to continue dialogue or press any number to skip.)");
+            System.out.println("You are driving down an abondoned road late at night. You just got out of a late meeting and the gps has guided you down a new road.\n");
+            System.out.println("Trusting the GPS you begind to take turns and enter into roads you have never seen before. The roads are empty except for you,\n");
+            
+            //so there isnt too much dialogue on the screen, user has to press 0 to continue or press any number to display the full dialogue. 
+            System.out.println("(Press '0' to continue dialogue or press any number to skip.\n)");
             int next = input.nextInt();
 
             if (next == 0){
 
-                System.out.println(">>Trusting the GPS you begin to take turns and enter into roads you have never seen before. The roads are empty except for you,\n");
+                System.out.println("Trusting the GPS you begin to take turns and enter into roads you have never seen before. The roads are empty except for you,\n");
                 System.out.println("only a few streetlights illuminating the road. As you listen to the GPS you turn down a road and drive, you see a large house\n");
 
 
-                System.out.println("(Press '0')");
+                System.out.println("(Press '0')\n");
                 int next1 = input.nextInt();
 
 
