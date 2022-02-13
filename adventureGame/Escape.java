@@ -2,17 +2,16 @@ package adventureGame;
 import java.util.*;
 
 public class Escape {
-    
+    public int doorChoice;
     public String name;
     Scanner input = new Scanner(System.in);
-    
-    // default constructor
+
     public Escape() {
 
     }
-    // overload constructor
-    public Escape( String playerName) {
-        
+
+    public Escape(int choice, String playerName) {
+        this.doorChoice = choice;
         this.name = playerName;
 
     }
@@ -31,7 +30,7 @@ public class Escape {
                 System.out.println("Trusting the GPS you begin to take turns and enter into roads you have never seen before. The roads are empty except for you,\n");
                 System.out.println("only a few streetlights illuminating the road. As you listen to the GPS you turn down a road and drive, you see a large house\n");
 
-
+                //to continue to next dialogue
                 System.out.println("(Press '0')\n");
                 int next1 = input.nextInt();
 
@@ -42,7 +41,7 @@ public class Escape {
                     System.out.println("coming from your car and get worried. You have never heard it before until today. You try to ignore the noise until your car starts\n");
                     System.out.println("jerking in an unusual manner. The car begins to slow down and finally completely halts in the middle of the road. You try\n");
 
-
+                    //to continue to next dialogue
                     System.out.println("(Press '0')");
                     int next3 = input.nextInt();
                     if (next == 0){
@@ -84,17 +83,19 @@ public class Escape {
                     System.out.println("Before you can refute, the call ends. You look at your phone and notice your service is completely gone.\n");
                     System.out.println("Without a working phone or a working car you begin to get scared.\n");
                     System.out.println("You remember the house you just passed by. Without any other choice you get out of your car and head towards the house.\n");
-
+                   
+                    //to continue to next dialogue
                     System.out.println("(Press '0' to continue)");
                     int next1 = input.nextInt();
-
+                    
+                    //if user asks to go to next dialogue, it enters into house function.
                     if(next == 0){
                         house();
                     }
                 }
 
                 else{
-
+                    //if user enters wrong response, it displays this and loops back.
                     System.out.println("Your response is not valid...\n");
 
 
@@ -105,23 +106,28 @@ public class Escape {
 
         }
     public void house(){
-
+        
+        //Starts the sequence of user entering into the house.
         System.out.println("As you approach the house you notice that there are no lights turned on.\n");
         System.out.println("You cant hear any noises except for the trees rustling with the wind.\n");
         System.out.println("The house is beautiful, illuminating in the moonlight. You ignore any doubt and head to the door.\n");
-
+        
+        //loop to knock. They have to press 1 to knock. If they press anything else it loops them back till they press 1.
         int knock = 0;
         while (knock != 1){
-
+            
+            //asking user to enter 1.
             System.out.println("(Press '1' to knock on door.)");
             knock = input.nextInt();
-
+            
+            //When the user enters 1, they are able to go to the next dialogue. 
             if (knock == 1){
                 System.out.println("You knock on the door. The force of the knock, the door opens.\n");
                 System.out.println("It was unlocked the entire time.\n");
                 System.out.println("You enter into the house. Looking around, you notice that its old.\n");
                 System.out.println("and there are spider webs everywhere. The house looks abandoned.\n");
-
+                
+                //to continue to next dialogue
                 System.out.println("(Press '0' to continue");
                 int next4 = input.nextInt();
 
@@ -131,13 +137,15 @@ public class Escape {
                     System.out.println("Before you could turn around to leave, a large gust of wind comes out\n");
                     System.out.println("of nowhere and the door slams closed. You're frightened and reach for the door handle.\n");
 
-
+                    //user must enter 1 to open door, they will be looped back if they say anything else till they open the door.
                     int handle = 0;
                     while (handle !=1){
-
+                        
+                        //to open door and continue to next dialogue.
                         System.out.println("(Press '1' to open the door)\n");
                         handle = input.nextInt();
-
+                        
+                        //when user enters 1, they are able to go to next dialogue. 
                         if (handle == 1){
                             System.out.println("The door is stuck...\n");
                             System.out.println("It wont open no matter how hard you try to pull it.\n");
@@ -145,12 +153,13 @@ public class Escape {
                             System.out.println("you hear the chandlier shake. You look up and notice its becoming loose.\n");
                             System.out.println("You leave the door and start running down the hall. The chandlier crashes but\n");
                             System.out.println("you get out of the way before it falls. There's debri everywhere.\n");
-
+               
+                            //to continue to next dialogue
                             System.out.print("(Press '0' to go into hallway)\n");
                             int next5 = input.nextInt();
 
                             if (next5 == 0){
-                                
+                                //hallway();
                             }
                         }
                     }
@@ -163,38 +172,42 @@ public class Escape {
     }
 
     public boolean hallway() {
+        //hallway dialogue.
         System.out.println(" Now you are in the hallway, there are three doors\n");
+       
+        //user must pick a door they want to go through.
         System.out.println("please enter a number from 1-3, to choose a door\n");
         Scanner input = new Scanner(System.in);
         Random rand = new Random();
-
-        int door1 = rand.nextInt(3) + 1; //assigns door1 to random number from 1-3
+        
+        //the door number is given randomly.
+        int door1 = rand.nextInt(3) + 1;
 
         int door2 = 0;
         int door3 =0;
-        // the while loops make sure all three doors are not assigned to the same number
+
         while (door2 == door1 || door2 == 0) {
-            door2 = rand.nextInt(3) + 1;// assigns door2 to random number from 1-3
+            door2 = rand.nextInt(3) + 1;
         }
 
         while (door3 == door1 || door3 == door2 || door3 == 0) {
-            door3 = rand.nextInt(3) + 1;// assigns door3 to random number from 1-3
+            door3 = rand.nextInt(3) + 1;
         }
-        boolean choiceResult = false; // initializes the result of going through a door to false
+        boolean v = false;
         int choice = input.nextInt();
         if (choice == door1) {
-            
-            choiceResult = theDoor1();// the player went through door 1
+            //System.out.println(theDoor1());// this is just to show the output
+            v = theDoor1();
         }
         if (choice == door2) {
-            
-            choiceResult = theDoor2();// the player went through door 2
+            //System.out.println(theDoor2());//this is just to show the output
+            v = theDoor2();
         }
         if (choice == door3) {
-            
-            choiceResult = theDoor3();// the player went through door 3
+            //System.out.println(theDoor3());//this is just to show the output
+            v = theDoor3();
         }
-        return choiceResult;
+        return v;
     }
 
 
@@ -249,35 +262,27 @@ public class Escape {
 
      // Meseret's door
     public boolean theDoor2() {
-        // generates four random numbers from 5-9
         int number1 = (int) (Math.random() * 5) + 5;
         int number2 = (int) (Math.random() * 5) + 5;
         int number3 = (int) (Math.random() * 5) + 5;
         int number4 = (int) (Math.random() * 5) + 5;
-        
-        int total = number1 + number2;// adds random num1 and num 2
-        int product = number3 * number4;// multiplies num3 and num 4
-        
-        // informs the player of the situation  behind door 2
-        System.out.println(" Now you have the key to door2. This  door leads you to a basement" +
-                "where there is a locked door with a password. \n\n Inorder to get out of the house you need" +
-                " to enter the correct password ");
-        
-        System.out.println("\npassword hint: " + number1 + "+" + number2
+        int total = number1 + number2;
+        int product = number3 * number4;
+        System.out.println(" Now you have the key to door2. This  door leads you to a basement\n" +
+        System.out.println("where there is a locked door with a password. in order to get out of the house you need\n");
+        System.out.println("to enter the correct password: \n");
+        System.out.println("password hint: " + number1 + "+" + number2
                 + " space " + number3 + "*" + number4);
         Scanner input = new Scanner(System.in);
-        
-        // takes in player's input
         int Ans1 = input.nextInt();
         int Ans2 = input.nextInt();
-        
-        // compares the users answer and the correct answer
         if (Ans1 == total && Ans2 == product) {
-            return true;// returns true if player is correct
+            return true;
         }
         else {
-            System.out.println("WRONG PASSWORD!");
-            return false;// returns false if player is wrong
+            System.out.println("wrong password\n");
+            System.out.println("\n now you are back to the hallway\n");
+            return false;
         }
     }
 
