@@ -1,15 +1,16 @@
 package adventureGame;
 import java.util.*;
 
+//This is the "main" class, sets up the game for the users and declares several variables used throughout the game.
 public class Escape {
     public int doorChoice;
     public String name;
     Scanner input = new Scanner(System.in);
-
+   
     public Escape() {
 
     }
-
+    
     public Escape(int choice, String playerName) {
         this.doorChoice = choice;
         this.name = playerName;
