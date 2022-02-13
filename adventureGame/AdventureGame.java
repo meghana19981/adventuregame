@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class AdventureGame {
     public static void main(String[] args){
         Escape Answer = new Escape();
-        System.out.println("Welcome this is \"Escape the abandoned house \" game \nwhat is your name?");
+        System.out.println("Welcome! This is the \"Escape the abandoned house \" game. \nWhat is your name?");
         Scanner input = new Scanner(System.in);
         Answer.name= input.next();
         System.out.println("Hello "+Answer.name);
