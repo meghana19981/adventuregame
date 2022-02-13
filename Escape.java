@@ -2,14 +2,14 @@ package adventureGame;
 import java.util.*;
 
 public class Escape {
-    public boolean doorChoice;
+    public int doorChoice;
     Scanner input = new Scanner(System.in);
 
     public Escape() {
 
     }
 
-    public Escape(boolean choice) {
+    public Escape(int choice) {
         this.doorChoice = choice;
 
     }
