@@ -2,7 +2,7 @@
 // Meghana, Jordan and Meseret
 // IS 247
 // 02/13/2022
-// program description: this is a program for a game where a player plays to ascape an abondend house
+// program description: this is a program for a game where a player plays to escape an abondend house
 
 package adventureGame;
 import java.util.*;
