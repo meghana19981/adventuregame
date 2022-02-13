@@ -199,7 +199,8 @@ public class Escape {
 
     // Jordan's Door
     public boolean theDoor1() {
-
+    
+        //print statements for the items the user can pick
         System.out.println("...");
         System.out.println("In front of you are three items: \n");
         System.out.println("\n|A bat|   |A flashlight|   |A ladder|\n");
@@ -214,16 +215,22 @@ public class Escape {
         //validate user's choice
         //print out scenario for each item
         boolean result = false;
+        
+        //prints out bat scenario
         if (userItem.equals("bat") || userItem.equals ("Bat") || userItem.equals("BAT")){
             System.out.println("\nYou have picked up the " + userItem);
             System.out.println("\nUnfortunately, you have tried hitting the windows down with \nyour bat but they won't break.\n");
             result = false;
         }
+        
+        //prints out flashlight scenario
         else if (userItem.equals("flashlight") || userItem.equals("Flashlight") || userItem.equals("FLASHLIGHT")){
             System.out.println("\nYou have picked up the " + userItem);
             System.out.println("\nUnfortunately, you have tried finding a way out with \nyour flashlight but you're unsuccessful.\n");
             result = false;
         }
+        
+        //prints out ladder scenario
         else if (userItem.equals("ladder") || userItem.equals("Ladder") || userItem.equals("LADDER")){
             System.out.println("\nGreat! You have picked up the " + userItem);
             System.out.println("\nYou were able to climb up to a window with \nyour ladder and jump out!\n");
