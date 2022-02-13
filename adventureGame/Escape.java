@@ -72,10 +72,11 @@ public class Escape {
             }
             //user must enter 1 or 2 to continue
             int help=0;
-            while(help < 1 || help > 3){
+            //This while loop allows it so the user can only press 1 for help, if they press an invalid entry it loops them back to press 1.
+            while(help == 1){
                 System.out.println("(Automated Voice: press '1' for help.)");
                 help = input.nextInt();
-
+                
                 if(help == 1 || help == 2){
 
                     System.out.println("You press for help. The voice tells you that it will take more than 10 hours to get help.\n");
