@@ -1,3 +1,9 @@
+// Group 5
+// Meghana, Jordan and Meseret
+// IS 247
+// 02/13/2022
+// program description: this runs the Escape class
+
 package adventureGame;
 
 import java.util.Scanner;
