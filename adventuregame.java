@@ -241,30 +241,32 @@ public class adventuregame{
    
    public void doortwo(){
    
-        int number1= (int)(Math.random()*5)+5;
-        int number2= (int)(Math.random()*5)+5;
-        int number3= (int)(Math.random()*5)+5;
-        int number4= (int)(Math.random()*5)+5;
-        int total1= number1 + number2;
-        int toatl2= number3 * number4;
+      int number1= (int)(Math.random()*5)+5;
+      int number2= (int)(Math.random()*5)+5;
+      int number3= (int)(Math.random()*5)+5;
+      int number4= (int)(Math.random()*5)+5;
+      int total1= number1 + number2;
+      int toatl2= number3 * number4;
        
        
-        System.out.println(" Now you have the key to Door 2. This  door leads you to a basement\n"); 
-        System.out.println("where there is a locked door with a password. in order to get out of the house you need\n");
-        System.out.println("to enter the correct password \n");
-        System.out.println("password hint: "+ number1 + "+" + number2 + " space " +number3 +"*" + number4);
+      System.out.println(" Now you have the key to Door 2. This  door leads you to a basement\n"); 
+      System.out.println("where there is a locked door with a password. in order to get out of the house you need\n");
+      System.out.println("to enter the correct password \n");
+      System.out.println("password hint: "+ number1 + "+" + number2 + " space " +number3 +"*" + number4);
         
-        Scanner input= new Scanner(System.in);
+      Scanner input= new Scanner(System.in);
         
-        int Ans1 = input.nextInt();
-        int Ans2 = input.nextInt();
-        if (Ans1==total1 && Ans2==toatl2){
-           System.out.println("You got the right answer!\n");
-           ending(); 
-        }
-        else{
-            System.out.println("wrong password... Now you are back to the hallway\n");
-            hallway();
+      int Ans1 = input.nextInt();
+      int Ans2 = input.nextInt();
+      
+      if (Ans1==total1 && Ans2==toatl2){
+         System.out.println("You got the right answer!\n");
+         ending(); 
+      }
+      
+      else{
+         System.out.println("wrong password... Now you are back to the hallway\n");
+         hallway();
         }
    
       
@@ -309,7 +311,7 @@ public class adventuregame{
                         
                  System.out.println("You picked the box. There are many items in the box.\n"); 
                  System.out.println("You look inside and find an object that might be useful...\n");
-                 System.out.println("It's a garage door opener!\n You press the button and it opens!\n");
+                 System.out.println("It's a garage door opener! You press the button and it opens!\n");
                  ending();
               }
                      
@@ -360,3 +362,4 @@ public class adventuregame{
    }
 
 }  
+
