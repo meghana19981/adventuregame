@@ -197,7 +197,7 @@ public class Escape {
     }
 
 
-    // the conditions need an edit from Jordan
+    // Jordan's Door
     public boolean theDoor1() {
 
         System.out.println("...");
