@@ -272,25 +272,33 @@ public class Escape {
         System.out.println("You feel around the wall next to you and find a light switch.\n");
         boolean result = false;
         int light = 0;
+        
+        //makes user turn on the light, if they press any other number, they are told to press 1 again. It loops them back.
         while (light != 1) {
             System.out.println("Press '1' to turn the light on!\n");
             light = input.nextInt();
-
+            
+            //when they turn the light on, they are able to see around them. They will find objects they can look through.
             if (light == 1) {
+                
+                //Gives users the ability to check where they want to look in the garage. One location has a way to escape.
                 System.out.println("You continue to look around the garage. There are several items that you can look through!\n");
                 System.out.println("press '1' to look in shelf\n");
                 System.out.println("press '2' to look in box\n");
                 System.out.println("press '3' to look in trashcan\n");
                 System.out.println("press '4' to look in bag\n");
-
+                
+                //user has to pick from 1-4 
                 System.out.println("What do you pick?: \n");
                 int pick = input.nextInt();
-
+                
+                //if user picks 1, they look through the shelf. The shelf has nothing so they are sent back to the hallway to play again.
                 if (pick == 1) {
 
                     System.out.println("You picked the shelf. You rumage through shelf and didnt find anything...\n");
                     result = false;
                 }
+                //if user picks 2, there is a box. The box has the garage door opener and they are able to escape.
                 else if (pick == 2) {
 
                     System.out.println("You picked the box. There are many items in the box.\n"); 
@@ -298,6 +306,8 @@ public class Escape {
                     System.out.println("It's a garage door opener! You press the button and it opens!\n");                    
                     result = true;
                 }
+                
+                //If user picks 3, they look through the trashcan. Theres nothing in it that is helpful. Sent back to hallway.
                 else if (pick == 3) {
 
                     System.out.println("You picked the trashcan...\n");
@@ -306,6 +316,8 @@ public class Escape {
                     System.out.println("Theres nothing in here...\n");                    
                     result = false;
                 }
+                
+                //user picks up bag and theres nothing inside of it. Sent back to hallway.
                 else if (pick == 4) {
 
                    System.out.println("You picked the bag. You reach inside.\n");
@@ -314,12 +326,15 @@ public class Escape {
                    System.out.println("Theres nothing in here....\n");                    
                    result = false;
                 }
+                
+                //they need to pick a proper number.
                 else {
                     System.out.println("Please enter a proper choice...");
                 }
 
 
             }
+            //they need to pick a proper number.
             else {
 
                 System.out.println("Please enter a proper choice...");
