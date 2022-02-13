@@ -59,7 +59,7 @@ public class Escape {
 
 
             else{
-
+                // if the user presses any other number the dialogue displays completely.
                 System.out.println(">>Trusting the GPS you begind to take turns and enter into roads you have never seen before. The roads are empty except for you,\n");
                 System.out.println("only a few streetlights illuminating the road. As you listen to the GPS you turn down a road and drive, you see a large house\n");
                 System.out.println("glowing under the moonlight. It looks intimidating and you try not to look at it for too long.Suddently you hear a weird noise\n");
