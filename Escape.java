@@ -122,15 +122,15 @@ public class Escape {
     }
 
 
-    // the conditions need an edit from Jordan
+    // Jordan's Door
     public boolean theDoor1() {
         System.out.println("...");
         System.out.println("In front of you are three items: ");
         System.out.println("\n|A bat|   |A flashlight|   |A ladder|");
         System.out.println("\nChoose wisely...");
-        System.out.println("\nType: \"bat\" to pick up bat");
-        System.out.println("\nType: \"flashlight\" to pick up flashlight");
-        System.out.println("\nType: \"ladder\" to pick up key");
+        System.out.println("\nType: \"bat\" to pick up the bat");
+        System.out.println("\nType: \"flashlight\" to pick up the flashlight");
+        System.out.println("\nType: \"ladder\" to pick up the ladder");
         String userItem = input.next();
 
 
@@ -139,18 +139,18 @@ public class Escape {
         //print out scenario for each item
         boolean result = false;
         if (userItem.equals("bat") || userItem.equals ("Bat") || userItem.equals("BAT")){
-            System.out.println("\nGreat! You have picked up the " + userItem);
-            System.out.println("\nYou have tried hitting the windows down with \nyour bat but they won't budge.");
+            System.out.println("\nYou have picked up the " + userItem);
+            System.out.println("\nUnfortunately, you have tried hitting the windows down with \nyour bat but they won't break.");
             result = false;
         }
         else if (userItem.equals("flashlight") || userItem.equals("Flashlight") || userItem.equals("FLASHLIGHT")){
-            System.out.println("\nGreat! You have picked up the " + userItem);
-            System.out.println("\nYou have tried finding a way out with \nyour flashlight but you're unsuccessful.");
+            System.out.println("\nYou have picked up the " + userItem);
+            System.out.println("\nUnfortunately, you have tried finding a way out with \nyour flashlight but you're unsuccessful.");
             result = false;
         }
         else if (userItem.equals("ladder") || userItem.equals("Ladder") || userItem.equals("LADDER")){
             System.out.println("\nGreat! You have picked up the " + userItem);
-            System.out.println("\nYou have tried unlocking the doors with \nyour key but they won't unlock.");
+            System.out.println("\nYou were able to climb up to a window with \nyour ladder and jump out!");
             result = true;
         }
         else {
